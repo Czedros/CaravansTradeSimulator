@@ -64,19 +64,19 @@ A sophisticated economic simulation that models global trading with dynamic trad
 3.**Outputs**:
    This creates matplotlib files with trendlines as well as a data summary
 
-## 🎮 Interactive Mode
+## Interactive Mode
 
 The simulator includes a comprehensive **interactive mode** where you can play the economic simulation in real-time!
 
-### 🚀 Getting Started
+### Getting Started
 
 ```bash
 python main.py --interactive
 ```
 
-### 🎯 Key Features
+### Key Features
 
-#### 📊 **Real-time Dashboard**
+#### **Real-time Dashboard**
 - **Current Status**: Day, simulation status, active caravans, total profit
 - **Market Overview**: Live price trends for all items with change indicators
 - **Recent Trades**: Last 5 completed trades with routes and values
@@ -98,7 +98,7 @@ python main.py --interactive
 | `H` | Show help |
 | `Q` | Quit simulation |
 
-### 🎯 **Trade Opportunities (T)**
+### **Trade Opportunities (T)**
 
 **NEW!** Players can now choose which caravans to send:
 
@@ -129,8 +129,6 @@ Your choice: 1
 ```
 
 ### 🚚 **Manual Caravan Creation (M)**
-
-**NEW!** Create custom caravans with specific routes:
 
 1. **View Available Towns**: See numbered list of all countries
 2. **Custom Routes**: Choose origin, destination, item type, and quantity
@@ -164,8 +162,6 @@ Your choice: 1,3,Tech,200
 ```
 
 ### 🏘️ **Detailed Town Information (D)**
-
-**ENHANCED!** Comprehensive town information with improved interface:
 
 1. **Town List**: See all available towns with basic info
 2. **Detailed View**: Select by number or name for full details
@@ -206,7 +202,7 @@ Your choice: 1,3,Tech,200
   🟡 Armaments      : Supply    850 | Demand    900 | Ratio  0.94
 ```
 
-### 🌟 **Key Benefits**
+### **Key Benefits**
 
 - **Player Agency**: Choose which trades to execute
 - **Strategic Decision Making**: Balance profit vs. risk
