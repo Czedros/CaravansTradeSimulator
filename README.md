@@ -49,27 +49,6 @@ A sophisticated economic simulation that models global trading with dynamic trad
 - **Delicacies**: Luxury and specialty goods
 - **Medicine**: Healthcare and pharmaceutical products
 
-## Architecture
-
-```
-caravan/
-├── data/                    # Data files
-│   ├── towns.csv           # Country/town data
-│   ├── items.csv           # Item definitions
-│   └── trade_logs.csv      # Trade history
-├── models/                  # Economic models
-│   ├── economy_model.py    # Price prediction and arbitrage
-│   ├── caravan_decision.py # Trade decision logic
-│   └── market_events.py    # Dynamic market events
-├── sim/                    # Simulation core
-│   ├── entities.py         # Town, Caravan, Item classes
-│   ├── world_state.py      # Global state management
-│   └── simulator.py        # Main simulation loop
-├── viz/                    # Visualization
-│   └── plot_prices.py      # Price charts and analysis
-└── main.py                 # CLI entry point
-```
-
 ## Quick Start
 
 1. **Install Dependencies**:
@@ -82,9 +61,12 @@ caravan/
    python main.py --days 30 --visualize
    ```
 
+3.**Outputs**:
+   This creates matplotlib files with trendlines as well as a data summary
+
 ## 🎮 Interactive Mode
 
-The simulator now includes a comprehensive **interactive mode** where you can play the economic simulation in real-time!
+The simulator includes a comprehensive **interactive mode** where you can play the economic simulation in real-time!
 
 ### 🚀 Getting Started
 
@@ -105,7 +87,7 @@ python main.py --interactive
 |---------|--------|
 | `1` | Step forward 1 day |
 | `7` | Step forward 7 days |
-| `30` | Step forward 30 days |
+| `30`| Step forward 30 days |
 | `T` | **Show trade opportunities** (send caravans) |
 | `M` | **Manual caravan creation** |
 | `C` | Show caravan status |
