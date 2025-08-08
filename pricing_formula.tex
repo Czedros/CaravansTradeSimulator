@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+\begin{document}
+
+\section*{Caravan Pricing and Opportunity Model}
+
+\paragraph{Notation.}
+Items $i \in \mathcal{I}$, countries/towns $c \in \mathcal{C}$, origin $o$, destination $d$, time index $t$.
+Let $S_{i,t}(c)$ and $D_{i,t}(c)$ denote supply and demand; $T(o,d)$ travel time (days);
+$R(o\!\to\! d)$ a unitless route risk (0--1 or scaled); and $\varepsilon>0$ a small constant.
+Let $f_\theta(\cdot)$ be the learned price model (linear, ridge, or ensemble).
+
+\subsection*{Baseline Prediction}
+A feature vector $\mathbf{x}_{i,t}(c)$ encodes distance centralities, recent volatility, local production focus,
+neighbor prices, and other engineered signals. The baseline (data-driven) price is
+\begin{equation}
+\hat P_{i,t}(c) \;=\; f_\theta\!\big(\mathbf{x}_{i,t}(c)\big).
+\end{equation}
+
+\subsection*{Structural Adjustments}
+Supply/demand imbalance and exogenous events apply multiplicative adjustments:
+\begin{align}
+A_{i,t}(c) &= 1 \;+\; \alpha \,\frac{D_{i,t}(c)-S_{i,t}(c)}{S_{i,t}(c)+\varepsilon}, \\[4pt]
+M^{\mathrm{event}}_{i,t}(c) &\in \mathbb{R}_{>0}.
+\end{align}
+Define the effective local price:
+\begin{equation}
+P^{\mathrm{eff}}_{i,t}(c) \;=\; \hat P_{i,t}(c)\,A_{i,t}(c)\,M^{\mathrm{event}}_{i,t}(c).
+\end{equation}
+
+\subsection*{Route Costs and Reputation/Tariffs}
+Travel introduces a landed-cost term and a bilateral multiplier for reputation/tariffs:
+\begin{align}
+L_{i,t}(o\!\to\! d) &= \kappa\,T(o,d) \;+\; \rho\,R(o\!\to\! d), \\[4pt]
+M^{\mathrm{rep}}_{i,t}(o\!\to\! d) &= 1 \;+\; \tau_{i,t}(o\!\to\! d),
+\end{align}
+where $\kappa$ is per-day cost and $\rho$ weights risk; $\tau$ captures taxes, penalties, or discounts based on bilateral relations and item type.
+
+\subsection*{Destination Ask and Opportunity}
+When selling item $i$ in $d$ sourced from $o$, the adjusted destination ask is
+\begin{equation}
+\tilde P_{i,t}(d \mid o) \;=\; P^{\mathrm{eff}}_{i,t}(d)\,M^{\mathrm{rep}}_{i,t}(o\!\to\! d) \;+\; L_{i,t}(o\!\to\! d).
+\end{equation}
+Compute the opportunity ratio and margin:
+\begin{align}
+\mathcal{R}_{i,t}(o\!\to\! d) &= \frac{\tilde P_{i,t}(d \mid o)}{P^{\mathrm{eff}}_{i,t}(o)}, \\
+\mathrm{Margin}(o\!\to\! d) &= \mathcal{R}_{i,t}(o\!\to\! d) - 1.
+\end{align}
+We consider trades where $\mathcal{R}_{i,t} > \gamma$ for threshold $\gamma$ (e.g., $1.15$).
+
+\paragraph{Notes.} In implementation, feature scaling and model selection are tracked per-item type; volatility is computed over recent windows; and production focus can enter as a small additive term in $\tau$ to favor exporters or penalize import-strained goods.
+
+\end{document}
