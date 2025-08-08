@@ -81,7 +81,7 @@ python main.py --interactive
 - **Market Overview**: Live price trends for all items with change indicators
 - **Recent Trades**: Last 5 completed trades with routes and values
 
-#### 🎮 **Player Controls**
+####  **Player Controls**
 
 | Control | Action |
 |---------|--------|
@@ -109,26 +109,26 @@ python main.py --interactive
 
 **Example:**
 ```
-💰 TOP TRADE OPPORTUNITIES:
+ TOP TRADE OPPORTUNITIES:
 ------------------------------------------------------------
  1. Tech           | USA         → China       | Profit:  25.3% | Risk:   0.5
  2. Armaments      | Germany     → Russia      | Profit:  18.7% | Risk:   0.8
  3. Medicine       | Switzerland → Brazil      | Profit:  15.2% | Risk:   0.3
 
-🎮 PLAYER ACTIONS:
+ PLAYER ACTIONS:
   Enter opportunity number to send caravan
   Press ENTER to continue without action
 
 Your choice: 1
 
-📦 Sending caravan for Tech
+ Sending caravan for Tech
    Route: USA → China
    Quantity: 150
    Expected Profit: 25.3%
-✅ Caravan a1b2c3d4... created and dispatched!
+ Caravan a1b2c3d4... created and dispatched!
 ```
 
-### 🚚 **Manual Caravan Creation (M)**
+###  **Manual Caravan Creation (M)**
 
 1. **View Available Towns**: See numbered list of all countries
 2. **Custom Routes**: Choose origin, destination, item type, and quantity
@@ -139,29 +139,29 @@ Your choice: 1
 
 **Example:**
 ```
-🚚 MANUAL CARAVAN CREATION
+ MANUAL CARAVAN CREATION
 ============================================================
-📋 AVAILABLE TOWNS:
+ AVAILABLE TOWNS:
 ------------------------------------------------------------
  1. USA            | North America | Pop: 331,002,651
  2. China          | Asia          | Pop: 1,439,323,776
  3. Germany        | Europe        | Pop: 83,783,942
 ...
 
-🎮 CREATE CARAVAN:
+ CREATE CARAVAN:
   Format: origin_number,destination_number,item_type,quantity
   Example: 1,5,Tech,100
   Press ENTER to cancel
 
 Your choice: 1,3,Tech,200
 
-✅ Caravan e5f6g7h8... created!
+ Caravan e5f6g7h8... created!
    Route: USA → Germany
    Cargo: 200 Tech
    Value: $113,000.00
 ```
 
-### 🏘️ **Detailed Town Information (D)**
+###  **Detailed Town Information (D)**
 
 1. **Town List**: See all available towns with basic info
 2. **Detailed View**: Select by number or name for full details
@@ -170,34 +170,34 @@ Your choice: 1,3,Tech,200
 
 **Example:**
 ```
-🏘️  USA - DETAILED INFORMATION
+  USA - DETAILED INFORMATION
 ============================================================
-📍 BASIC INFO:
+ BASIC INFO:
   Region: North America
   Population: 331,002,651
   GDP per capita: $63,416
   Tech Level: 9
   Stability: 0.85
 
-📦 PRODUCTION FOCUS:
-  ⭐ Tech           :   2.10x
-  🔸 Armaments      :   1.45x
-  • Food           :   0.95x
+ PRODUCTION FOCUS:
+   Tech           :   2.10x
+   Armaments      :   1.45x
+   Food           :   0.95x
 
-🤝 REPUTATION:
-  🟢 Allies: UK, Canada, Germany, France, Japan
-  🔴 Enemies: Russia, China
+ REPUTATION:
+   Allies: UK, Canada, Germany, France, Japan
+   Enemies: Russia, China
 
-💰 CURRENT PRICES:
+ CURRENT PRICES:
   ↗️ Tech           : $  565.00 (+12.3%)
   ↘️ Food           : $  104.00 ( -5.2%)
   ➡️ Armaments      : $  312.00 ( +0.1%)
 
-📊 INVENTORY:
-  📦 Tech           :    1,250
-  📦 Armaments      :      850
+ INVENTORY:
+   Tech           :    1,250
+   Armaments      :      850
 
-📈 SUPPLY/DEMAND:
+SUPPLY/DEMAND:
   🟢 Tech           : Supply  1,250 | Demand  1,000 | Ratio  1.25
   🟡 Armaments      : Supply    850 | Demand    900 | Ratio  0.94
 ```
