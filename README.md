@@ -2,6 +2,11 @@
 
 A sophisticated economic simulation that models global trading with dynamic trade routes, price arbitrage, and predictive modeling. The simulator incorporates real-world country relationships, production specializations, and reputation systems to create a realistic trading environment.
 
+## Notes:
+This simulator began as part of a larger tower defense game with trading mechanics. During development, I wanted to explore the economic systems in isolation, so I built this “one night” take on just the trading and price modeling side. The original game includes additional conditions and factors beyond what’s here.
+
+The formulas used are included as a LaTeX file in docs/; I welcome comments and suggestions on them.
+
 ## Features
 
 ### Core Economic Simulation
